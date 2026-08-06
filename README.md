@@ -21,14 +21,12 @@
 
 | Platform | Download | Requirements |
 |----------|----------|--------------|
-| 📱 **Android** | [Download APK](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/GestureShare-android.apk) | Android 12+ |
-| 🪟 **Windows** | [Download MSI](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/GestureShare-windows-x64.msi) | Windows 10/11 |
-| 🍎 **macOS** | [Download DMG](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/GestureShare-macos-universal.dmg) | macOS 11+ |
-| 🐧 **Linux** | [Download AppImage](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/GestureShare-linux-x64.AppImage) | Most distros |
+| 📱 **Android** | [Download APK](https://github.com/dreamerdkuroshin/DreamGesture/raw/main/release/android/README.txt) | Android 12+ |
+| 🪟 **Windows** | [Download MSI](https://github.com/dreamerdkuroshin/DreamGesture/raw/main/release/windows/README.txt) | Windows 10/11 |
+| 🍎 **macOS** | [Download DMG](https://github.com/dreamerdkuroshin/DreamGesture/raw/main/release/macos/README.txt) | macOS 11+ |
+| 🐧 **Linux** | [Download AppImage](https://github.com/dreamerdkuroshin/DreamGesture/raw/main/release/linux/README.txt) | Most distros |
 
-> **All releases:** [github.com/dreamerdkuroshin/DreamGesture/releases](https://github.com/dreamerdkuroshin/DreamGesture/releases)
-
-> ⚡ **Auto-built via GitHub Actions** — When a new release is created, CI/CD automatically builds all platforms and uploads the binaries.
+> **Auto-built via GitHub Actions** — CI/CD builds automatically on push.
 
 ---
 
