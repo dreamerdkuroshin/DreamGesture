@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![DreamGesture Logo](dreamgesture_logo.png)
+<img src="dreamgesture_logo.png" width="100" alt="DreamGesture Logo">
 
 ### Throw files between phones and computers using hand gestures.
 
