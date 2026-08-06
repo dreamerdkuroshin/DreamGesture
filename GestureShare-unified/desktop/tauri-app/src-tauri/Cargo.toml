@@ -1,0 +1,28 @@
+[package]
+name = "gestureshare-desktop"
+version = "0.1.0"
+description = "GestureShare Desktop - Cross-platform gesture file sharing"
+edition = "2021"
+
+[lib]
+name = "gestureshare_desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "1.5", features = [] }
+
+[dependencies]
+tauri = { version = "1.6", features = ["shell-open", "system-tray"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+tokio = { version = "1.35", features = ["full"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+
+gesture_protocol = { path = "../../../core/protocol-rs" }
+gesture_engine_rs = { path = "../gesture-engine-rs" }
+screen_capture_rs = { path = "../screen-capture-rs" }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]

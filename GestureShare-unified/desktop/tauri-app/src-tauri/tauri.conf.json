@@ -1,0 +1,93 @@
+{
+    "build": {
+        "beforeBuildCommand": "npm run build",
+        "beforeDevCommand": "npm run dev",
+        "devPath": "http://localhost:5173",
+        "distDir": "../dist",
+        "withGlobalTauri": true
+    },
+    "package": {
+        "productName": "GestureShare",
+        "version": "0.1.0"
+    },
+    "tauri": {
+        "allowlist": {
+            "all": false,
+            "shell": {
+                "open": true
+            },
+            "notification": {
+                "all": true
+            },
+            "fs": {
+                "all": false,
+                "readFile": true,
+                "writeFile": true,
+                "readDir": true,
+                "scope": ["$HOME/**", "$DOWNLOAD/**", "$DESKTOP/**", "$DOCUMENT/**", "$PICTURE/**"]
+            },
+            "dialog": {
+                "open": true,
+                "save": true,
+                "message": true
+            },
+            "clipboard": {
+                "all": true
+            }
+        },
+        "systemTray": {
+            "iconPath": "icons/32x32.png",
+            "iconAsTemplate": true
+        },
+        "bundle": {
+            "active": true,
+            "category": "Productivity",
+            "copyright": "Apache-2.0",
+            "deb": {
+                "depends": []
+            },
+            "externalBin": [],
+            "icon": ["icons/icon.png", "icons/icon.ico", "icons/icon.icns"],
+            "identifier": "com.gestureshare.desktop",
+            "longDescription": "Cross-platform gesture-based file sharing",
+            "macOS": {
+                "frameworks": [],
+                "minimumSystemVersion": "10.15",
+                "exceptionDomain": "",
+                "signingIdentity": null,
+                "providerShortName": null,
+                "entitlements": null
+            },
+            "resources": [],
+            "shortDescription": "GestureShare Desktop",
+            "targets": "all",
+            "windows": {
+                "certificateThumbprint": null,
+                "digestAlgorithm": "sha256",
+                "timestampUrl": "",
+                "wix": {
+                    "language": "en-US"
+                }
+            }
+        },
+        "security": {
+            "csp": "default-src 'self'; img-src 'self' asset: https://asset.localhost; style-src 'self' 'unsafe-inline'"
+        },
+        "updater": {
+            "active": false
+        },
+        "windows": [
+            {
+                "fullscreen": false,
+                "height": 720,
+                "resizable": true,
+                "title": "GestureShare",
+                "width": 900,
+                "minWidth": 640,
+                "minHeight": 480,
+                "decorations": true,
+                "transparent": false
+            }
+        ]
+    }
+}

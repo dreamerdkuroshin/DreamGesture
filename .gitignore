@@ -1,0 +1,74 @@
+# Secrets, Credentials, and Environment Files
+.env
+.env.*
+*.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+*.key
+*.pem
+*.p12
+*.pkcs12
+*.crt
+*.cer
+*.pfx
+secrets/
+**/secrets/
+*secret*
+*credential*
+local.properties
+.gradle.properties
+keystore.properties
+*.jks
+*.keystore
+google-services.json
+GoogleService-Info.plist
+
+# Gradle & Build
+.gradle/
+build/
+**/build/
+/build/
+
+# Rust
+**/target/
+target/
+**/*.rs.bk
+
+# Node & Web
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# IDE & Editor
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*.user
+*.userosv
+*.suo
+
+# OS generated
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Android & Keystore outputs
+*.apk
+*.aab
+*.ap_
+
+# Native / NDK
+obj/
+*.so
+.externalNativeBuild/
+.cxx/
+
+# Logs & Temp
+*.log
+*.tmp
+captures/

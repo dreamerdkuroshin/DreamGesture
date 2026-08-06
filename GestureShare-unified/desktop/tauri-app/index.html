@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GestureShare Desktop</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+</head>
+<body>
+    <div id="app">
+        <div class="app-container">
+            <header class="app-header">
+                <div class="logo">
+                    <span class="logo-icon">🤚</span>
+                    <h1>GestureShare</h1>
+                </div>
+                <div class="status-indicator" id="status-indicator">
+                    <span class="status-dot"></span>
+                    <span class="status-text">Inactive</span>
+                </div>
+            </header>
+
+            <main class="main-content">
+                <section class="control-panel glass-card">
+                    <h2>Gesture Detection</h2>
+                    <p class="description">Enable camera-based gesture recognition to share files between devices.</p>
+                    <button id="toggle-detection" class="btn btn-primary">
+                        Start Detection
+                    </button>
+                </section>
+
+                <section class="devices-panel glass-card">
+                    <h2>Nearby Devices</h2>
+                    <div id="devices-list" class="devices-list">
+                        <p class="empty-state">No devices found. Make sure other devices are on the same network.</p>
+                    </div>
+                </section>
+
+                <section class="transfer-panel glass-card">
+                    <h2>Transfer Status</h2>
+                    <div id="transfer-status" class="transfer-status">
+                        <p class="idle-text">No active transfers</p>
+                    </div>
+                    <div id="transfer-progress" class="transfer-progress hidden">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progress-fill"></div>
+                        </div>
+                        <span class="progress-text" id="progress-text">0%</span>
+                    </div>
+                </section>
+
+                <section class="gesture-guide glass-card">
+                    <h2>Gesture Guide</h2>
+                    <div class="gesture-grid">
+                        <div class="gesture-item">
+                            <span class="gesture-icon">🤾</span>
+                            <span class="gesture-name">Throw</span>
+                            <span class="gesture-action">Send file</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">✊</span>
+                            <span class="gesture-name">Grab</span>
+                            <span class="gesture-action">Receive file</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">👈</span>
+                            <span class="gesture-name">Swipe Left</span>
+                            <span class="gesture-action">Cancel</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">👉</span>
+                            <span class="gesture-name">Swipe Right</span>
+                            <span class="gesture-action">Send</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">👌</span>
+                            <span class="gesture-name">Pinch</span>
+                            <span class="gesture-action">Copy</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">🖐️</span>
+                            <span class="gesture-name">Open Palm</span>
+                            <span class="gesture-action">Paste</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">👋</span>
+                            <span class="gesture-name">Wave</span>
+                            <span class="gesture-action">Connect</span>
+                        </div>
+                        <div class="gesture-item">
+                            <span class="gesture-icon">✊</span>
+                            <span class="gesture-name">Fist</span>
+                            <span class="gesture-action">Pause</span>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="app-footer">
+                <span>End-to-end encrypted • No cloud • Offline first</span>
+            </footer>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>

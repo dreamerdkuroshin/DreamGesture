@@ -1,0 +1,20 @@
+[package]
+name = "screen_capture_rs"
+version = "0.1.0"
+edition = "2021"
+description = "Cross-platform screen capture for GestureShare Desktop"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tracing = "0.1"
+image = "0.24"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "0.52", features = ["Win32_Graphics_Gdi", "Win32_UI_WindowsAndMessaging"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+core-graphics = "0.23"
+objc = "0.2"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+x11 = { version = "2.21", features = ["xlib"] }

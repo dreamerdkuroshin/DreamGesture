@@ -1,0 +1,50 @@
+# Gradle
+.gradle/
+build/
+local.properties
+.gradle.properties
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build outputs
+/app/build/
+/app/release/
+/app/debug/
+*/build/
+*.apk
+*.aab
+*.ap_
+
+# Keystore
+*.jks
+*.keystore
+keystore.properties
+
+# NDK
+obj/
+*.so
+
+# External native build
+.externalNativeBuild/
+.cxx/
+
+# Captures
+captures/
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+
+# Navigation safeargs
+navigation-args/

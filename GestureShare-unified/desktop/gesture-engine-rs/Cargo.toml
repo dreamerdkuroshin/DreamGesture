@@ -1,0 +1,21 @@
+[package]
+name = "gesture_engine_rs"
+version = "0.1.0"
+edition = "2021"
+description = "Desktop gesture recognition engine using MediaPipe and ONNX"
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+tracing = "0.1"
+image = "0.24"
+
+[target.'cfg(target_os = "windows")'.dependencies]
+windows = { version = "0.52", features = ["Win32_Media_MediaFoundation", "Win32_Graphics_Gdi"] }
+
+[target.'cfg(target_os = "macos")'.dependencies]
+objc = "0.2"
+cocoa = "0.25"
+core-graphics = "0.23"
+
+[target.'cfg(target_os = "linux")'.dependencies]
+v4l = "0.14"
