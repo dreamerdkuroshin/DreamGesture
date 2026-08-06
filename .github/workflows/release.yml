@@ -1,0 +1,210 @@
+name: Build & Release
+
+on:
+  release:
+    types: [created]
+  workflow_dispatch:
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build-android:
+    name: Build Android APK
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Install NDK
+        run: |
+          echo "y" | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --install "ndk;25.2.9519653"
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: aarch64-linux-android, armv7-linux-androideabi, x86_64-linux-android, i686-linux-android
+
+      - name: Install cargo-ndk
+        run: cargo install cargo-ndk
+
+      - name: Build JNI Libraries
+        working-directory: GestureShare-unified/core/protocol-rs
+        run: |
+          cargo ndk \
+            -t arm64-v8a \
+            -t armeabi-v7a \
+            -t x86_64 \
+            -t x86 \
+            -o ../android/app/src/main/jniLibs \
+            build --release
+
+      - name: Copy Icons
+        run: |
+          for dir in mdpi hdpi xhdpi xxhdpi xxxhdpi; do
+            cp GestureShare-unified/assets/icons/logo_$dir.png GestureShare-unified/android/app/src/main/res/mipmap-$dir/ic_launcher.png
+            cp GestureShare-unified/assets/icons/logo_$dir.png GestureShare-unified/android/app/src/main/res/mipmap-$dir/ic_launcher_round.png
+          done
+
+      - name: Build APK
+        working-directory: GestureShare-unified/android
+        run: ./gradlew :app:assembleRelease
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: android-apk
+          path: GestureShare-unified/android/app/build/outputs/apk/release/*.apk
+
+      - name: Attach APK to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: GestureShare-unified/android/app/build/outputs/apk/release/*.apk
+
+  build-windows:
+    name: Build Windows MSI
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-pc-windows-msvc
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: cd GestureShare-unified/desktop/tauri-app && npm install
+
+      - name: Build Tauri
+        uses: tauri-apps/tauri-action@v0
+        with:
+          projectPath: GestureShare-unified/desktop/tauri-app
+          args: --target x86_64-pc-windows-msvc
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload MSI
+        uses: actions/upload-artifact@v4
+        with:
+          name: windows-msi
+          path: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/msi/*.msi
+
+      - name: Attach MSI to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/msi/*.msi
+
+  build-macos:
+    name: Build macOS DMG
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-apple-darwin, aarch64-apple-darwin
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: cd GestureShare-unified/desktop/tauri-app && npm install
+
+      - name: Build Tauri
+        uses: tauri-apps/tauri-action@v0
+        with:
+          projectPath: GestureShare-unified/desktop/tauri-app
+          args: --target universal-apple-darwin
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload DMG
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-dmg
+          path: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/dmg/*.dmg
+
+      - name: Attach DMG to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/dmg/*.dmg
+
+  build-linux:
+    name: Build Linux Packages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Rust
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          targets: x86_64-unknown-linux-gnu
+
+      - name: Install System Dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-3-dev \
+            libwebkit2gtk-4.0-dev \
+            libayatana-appindicator3-dev \
+            librsvg2-dev \
+            patchelf
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install Dependencies
+        run: cd GestureShare-unified/desktop/tauri-app && npm install
+
+      - name: Build Tauri
+        uses: tauri-apps/tauri-action@v0
+        with:
+          projectPath: GestureShare-unified/desktop/tauri-app
+          args: --target x86_64-unknown-linux-gnu
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload AppImage
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-appimage
+          path: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/appimage/*.AppImage
+
+      - name: Upload DEB
+        uses: actions/upload-artifact@v4
+        with:
+          name: linux-deb
+          path: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/deb/*.deb
+
+      - name: Attach AppImage to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/appimage/*.AppImage
+
+      - name: Attach DEB to Release
+        if: github.event_name == 'release'
+        uses: softprops/action-gh-release@v1
+        with:
+          files: GestureShare-unified/desktop/tauri-app/src-tauri/target/release/bundle/deb/*.deb
