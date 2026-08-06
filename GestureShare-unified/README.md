@@ -1,188 +1,129 @@
-# GestureShare
+# DreamGesture (GestureShare)
 
 <div align="center">
 
-![GestureShare Logo](assets/icons/dreamgesture_logo.png)
+![DreamGesture Logo](dreamgesture_logo.png)
 
 ### Throw files between phones and computers using hand gestures.
 
 **No accounts. No pairing. No cloud. Just gesture.**
 
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Platform](https://img.shields.io/badge/Platform-Android%20%7C%20Windows%20%7C%20macOS%20%7C%20Linux-brightgreen)]()
+[![Status](https://img.shields.io/badge/Status-Active-success.svg)]()
+
 </div>
 
 ---
 
-## Download & Install (Super Simple)
+## 📥 Download & Install
 
-### Option 1: Download ZIP (Easiest)
+### Quick Download
 
-1. **Go to the [Releases page](../../releases)**
-2. **Download** `GestureShare-v1.0.0.zip` for your computer
-3. **Extract the ZIP** (right-click → "Extract All" on Windows, double-click on Mac)
-4. **Open the folder** and run the installer inside
+| Platform | Download | File Type | Requirements |
+|----------|----------|-----------|--------------|
+| 📱 **Android** | [Download APK](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/DreamGesture-android.apk) | APK | Android 12+ |
+| 🪟 **Windows** | [Download MSI](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/DreamGesture-windows.msi) | MSI | Windows 10/11 |
+| 🍎 **macOS** | [Download DMG](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/DreamGesture-macos.dmg) | DMG | macOS 11+ |
+| 🐧 **Linux** | [Download AppImage](https://github.com/dreamerdkuroshin/DreamGesture/releases/latest/download/DreamGesture-linux.AppImage) | AppImage | Most distros |
 
-### Option 2: Download Individual Files
-
-| What You Have | What To Download | File To Click |
-|---------------|------------------|---------------|
-| 📱 Android phone/tablet | APK file | `GestureShare-v1.0.0-android.apk` |
-| 🪟 Windows PC/laptop | MSI installer | `GestureShare-v1.0.0-windows.msi` |
-| 🍎 Mac computer | DMG file | `GestureShare-v1.0.0-macos.dmg` |
-| 🐧 Linux computer | AppImage | `GestureShare-v1.0.0-linux.AppImage` |
+> **Don't see your platform?** Go to [Releases](https://github.com/dreamerdkuroshin/DreamGesture/releases) for all available files.
 
 ---
 
-## How To Install (Step By Step)
+## 🚀 How To Install (Step By Step)
 
-### 📱 Android - Install APK
-
-**What you get:** A file called `GestureShare-v1.0.0-android.apk`
-
-**How to install:**
+### 📱 Android
 
 1. **Download** the APK file to your phone
-2. **Open your file manager** app (called "Files" or "My Files")
-3. **Find the APK** in your Downloads folder
-4. **Tap on it**
-5. If it says "Install blocked" or "Unknown sources":
-   - Tap **Settings**
-   - Turn ON **"Allow from this source"** or **"Unknown sources"**
-   - Go back and tap the APK again
+2. **Open** your file manager (called "Files" or "My Files")
+3. **Find** the APK in Downloads
+4. **Tap** on it
+5. If "Install blocked": Tap **Settings** → Turn ON **"Allow from this source"**
 6. Tap **"Install"**
-7. Wait for it to finish
-8. Tap **"Open"**
-9. When it asks for permissions, tap **"Allow"** for:
-   - Camera (needed for gestures)
-   - Storage (needed for files)
-   - Location (needed to find other devices)
+7. Tap **"Open"**
+8. **Allow** Camera, Storage, and Location permissions
 
 **Done!** Open the app and tap "Start Detection".
 
 ---
 
-### 🪟 Windows - Install MSI
+### 🪟 Windows
 
-**What you get:** A file called `GestureShare-v1.0.0-windows.msi`
+1. **Download** the MSI file
+2. **Double-click** the MSI file
+3. If "Windows protected your PC": Click **"More info"** → **"Run anyway"**
+4. Click **"Next"** → Check **"I agree"** → Click **"Install"**
+5. Click **"Finish"**
 
-**How to install:**
+**First time only:** Allow camera in Settings → Privacy → Camera.
 
-1. **Download** the MSI file to your computer
-2. **Open your Downloads folder** (press `Windows key + E`, then click Downloads)
-3. **Double-click** `GestureShare-v1.0.0-windows.msi`
-4. If Windows says "Windows protected your PC":
-   - Click **"More info"**
-   - Then click **"Run anyway"**
-5. The installer window opens → Click **"Next"**
-6. Check **"I agree"** → Click **"Next"**
-7. Click **"Install"**
-8. Wait for it to finish
-9. Check **"Launch GestureShare"**
-10. Click **"Finish"**
-
-**Done!** GestureShare opens. Click "Start Detection".
-
-**First time only:** Windows Firewall will ask for permission:
-- Check **"Private networks"**
-- Click **"Allow access"**
+**Done!** Open from Start Menu.
 
 ---
 
-### 🍎 Mac - Install DMG
+### 🍎 macOS
 
-**What you get:** A file called `GestureShare-v1.0.0-macos.dmg`
+1. **Download** the DMG file
+2. **Double-click** the DMG file
+3. **Drag** DreamGesture to Applications folder
+4. **Open** Applications → Double-click DreamGesture
+5. If "Cannot be opened": **Right-click** → **"Open"**
 
-**How to install:**
-
-1. **Download** the DMG file to your Mac
-2. **Open your Downloads folder** (click Downloads in Finder sidebar)
-3. **Double-click** `GestureShare-v1.0.0-macos.dmg`
-4. A new window opens showing the app
-5. **Drag the GestureShare icon** onto the **Applications folder**
-6. Wait for it to copy
-7. **Close the DMG window**
-8. **Open Applications** (click Applications in Finder sidebar)
-9. **Double-click GestureShare**
-10. If it says "Cannot be opened":
-    - **Right-click** the app → Click **"Open"**
-    - Or: Open **System Preferences** → **Security** → Click **"Open Anyway"**
-11. Click **"Open"** in the popup
-
-**Done!** GestureShare opens. Click "Start Detection".
+**Done!** Click "Start Detection".
 
 ---
 
-### 🐧 Linux - Run AppImage
+### 🐧 Linux
 
-**What you get:** A file called `GestureShare-v1.0.0-linux.AppImage`
+1. **Download** the AppImage file
+2. **Right-click** → **Properties** → **Permissions** → Check **"Allow executing"**
+3. **Double-click** to run
 
-**How to install:**
-
-1. **Download** the AppImage file to your computer
-2. **Open your Downloads folder**
-3. **Right-click** the AppImage file
-4. Click **"Properties"**
-5. Go to **"Permissions"** tab
-6. Check the box **"Allow executing file as program"**
-7. Click **"Close"**
-8. **Double-click** the AppImage file
-9. It opens and runs!
-
-**Alternative way using terminal:**
-
+**Or via terminal:**
 ```bash
-# Go to Downloads
-cd ~/Downloads
-
-# Make it executable
-chmod +x GestureShare-v1.0.0-linux.AppImage
-
-# Run it
-./GestureShare-v1.0.0-linux.AppImage
+chmod +x DreamGesture*.AppImage
+./DreamGesture*.AppImage
 ```
 
-**Done!** GestureShare opens. Click "Start Detection".
-
-**If it doesn't work**, you might need to install these first:
-```bash
-sudo apt-get install libgtk-3-0 libwebkit2gtk-4.0-37
-```
+**Done!** Click "Start Detection".
 
 ---
 
-## How To Use (After Installing)
+## 🎮 How To Use
 
 ### First Time Setup
 
-1. **Install GestureShare on 2 devices** (any combination works)
-2. **Connect both to the same WiFi**
-3. **Open GestureShare on both devices**
-4. **Click "Start Detection"** on both
-5. **Wait 5 seconds** — devices find each other automatically
+1. **Install** DreamGesture on 2+ devices
+2. **Connect** all devices to the same WiFi
+3. **Open** DreamGesture on each device
+4. **Click "Start Detection"** on each
+5. **Wait 5 seconds** — devices find each other!
 
 ### Send a File
 
-| Device | How To Send |
-|--------|-------------|
-| **Android** | Take a screenshot (Power + Volume Down). GestureShare detects it automatically. |
-| **Windows** | Press `PrtScn` key OR select a file → right-click → Share via GestureShare |
-| **Mac** | Press `Cmd + Shift + 3` for screenshot OR drag file to GestureShare window |
-| **Linux** | Press `PrtScn` key OR select file in GestureShare |
+| Device | Action |
+|--------|--------|
+| **Android** | Take screenshot (Power + Vol Down) — auto detected |
+| **Windows** | Press `PrtScn` or select file → Share |
+| **Mac** | Press `Cmd+Shift+3` or drag file to app |
+| **Linux** | Press `PrtScn` or select file in app |
 
-**Then:** Point at the other device and make a **THROW** gesture 🤾
+**Then:** Point at target device and make a **THROW** gesture 🤾
 
 ### Receive a File
 
 When someone sends you a file:
-- Your device will **vibrate** and **glow**
-- Make a **GRAB** gesture ✊ to accept
-- Or make a **THUMB DOWN** 👎 to reject
+- Device **vibrates** and **glows**
+- Make **GRAB** gesture ✊ to accept
+- Or **THUMB DOWN** 👎 to reject
 
 ---
 
-## Gestures You Can Use
+## 🤚 Gestures
 
-| Gesture | What It Does | How To Do It |
-|---------|-------------|--------------|
+| Gesture | Action | How To Do It |
+|---------|--------|--------------|
 | 🤾 Throw | **Send file** | Push hand forward toward target |
 | ✊ Grab | **Receive file** | Close hand, pull toward you |
 | 👈 Swipe Left | **Cancel** | Move hand left |
@@ -196,61 +137,20 @@ When someone sends you a file:
 
 ---
 
-## Example: Phone to Laptop
+## 🔒 Security
 
-```
-You (Phone)                          Friend (Laptop)
-     │                                    │
-     │  1. Take screenshot                │
-     │  2. Open GestureShare              │
-     │  3. Click "Start Detection"        │
-     │                                    │
-     │              ───── Both on same WiFi ─────
-     │                                    │
-     │  4. Point phone at laptop          │
-     │  5. Make THROW gesture 🤾          │
-     │                                    │
-     │  ──── Encrypted transfer ────▶     │
-     │                                    │
-     │                           6. Laptop glows
-     │                           7. Make GRAB ✊
-     │                           8. Screenshot appears!
-```
+- ✅ **End-to-end encrypted** (AES-256-GCM)
+- ✅ **No cloud** — direct device-to-device
+- ✅ **No accounts** — no sign-up needed
+- ✅ **No logs** — nothing stored after transfer
+- ✅ **Offline** — works on local WiFi only
 
 ---
 
-## Troubleshooting
+## 📋 System Requirements
 
-### "Devices not finding each other"
-- Make sure both are on the **same WiFi**
-- Make sure **Location permission** is granted
-- Make sure **Start Detection** is clicked on both
-- Try turning WiFi off and on again
-
-### "Gesture not recognized"
-- Make sure there's **good lighting**
-- Keep your **whole hand in the camera view**
-- Hold the gesture **steady for 1 second**
-- Stay **30-80cm** from the camera
-
-### "Windows says the file is unsafe"
-- This is normal for new apps
-- Click **"More info"** → **"Run anyway"**
-
-### "Mac says app can't be opened"
-- **Right-click** the app → **"Open"**
-- Or go to **System Preferences** → **Security** → **"Open Anyway"**
-
-### "Linux AppImage won't run"
-- Right-click → **Properties** → **Permissions** → Check **"Allow executing"**
-- Or run: `chmod +x GestureShare*.AppImage`
-
----
-
-## System Requirements
-
-| Platform | Minimum Version | Needs |
-|----------|----------------|-------|
+| Platform | Minimum | Needs |
+|----------|---------|-------|
 | Android | Android 12+ | Front camera, WiFi |
 | Windows | Windows 10/11 (64-bit) | Webcam, WiFi |
 | macOS | macOS 11+ (Big Sur) | Webcam, WiFi |
@@ -258,52 +158,77 @@ You (Phone)                          Friend (Laptop)
 
 ---
 
-## Security
+## ❓ Troubleshooting
 
-- ✅ **End-to-end encrypted** (AES-256-GCM)
-- ✅ **No cloud** — files go directly between devices
-- ✅ **No accounts** — no sign-up needed
-- ✅ **No logs** — nothing stored after transfer
-- ✅ **No internet required** — works on local WiFi only
+**Devices not finding each other?**
+- Same WiFi network? ✓
+- Location permission granted? ✓
+- "Start Detection" clicked on both? ✓
+
+**Gesture not recognized?**
+- Good lighting? ✓
+- Whole hand in camera view? ✓
+- Hold gesture steady 1 second? ✓
+
+**Windows says file unsafe?**
+- Click "More info" → "Run anyway"
+
+**Mac says can't open?**
+- Right-click app → "Open"
 
 ---
 
-## For Developers
+## 📁 Project Structure
 
-Want to build from source? See the full documentation:
+This repository contains two projects:
 
-- [Building from Source](docs/BUILD.md)
-- [Protocol Specification](docs/PROTOCOL.md)
-- [Architecture](docs/ARCHITECTURE.md)
-- [Developer Guide](docs/DEVELOPER_GUIDE.md)
+1. **[GestureShare](GestureShare/)** — Native Android app (Kotlin, Jetpack Compose, CameraX, MediaPipe)
+2. **[GestureShare-unified](GestureShare-unified/)** — Cross-platform engine (Rust + Tauri for Windows/macOS/Linux + Android)
 
-### Quick Build Commands
+---
 
+## 🛠️ Build from Source
+
+### Android
 ```bash
-# Clone repository
-git clone https://github.com/gestureshare/unified.git
-cd unified
-
-# Build everything
-./scripts/build-all.sh
-
-# Or build specific platform:
-./scripts/build-android.sh    # Android APK
-./scripts/build-desktop.sh    # Windows/Mac/Linux
+cd GestureShare
+./gradlew assembleRelease
 ```
 
+### Desktop (Windows/macOS/Linux)
+```bash
+cd GestureShare-unified
+cd core/protocol-rs && cargo build --release
+cd ../../desktop/tauri-app
+npm install
+npm run tauri build
+```
+
+See [docs/BUILD.md](docs/BUILD.md) for detailed instructions.
+
 ---
 
-## License
+## 📄 Documentation
 
-Apache 2.0 — Free to use, modify, and distribute.
+- [Download & Install](#-download--install) (above)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Protocol Specification](docs/PROTOCOL.md)
+- [Security Audit](docs/SECURITY.md)
+- [Gesture Reference](docs/GESTURES.md)
+- [Developer Guide](docs/DEVELOPER_GUIDE.md)
+
+---
+
+## 📜 License
+
+Apache 2.0 — Free to use, modify, and distribute. See [LICENSE](LICENSE).
 
 ---
 
 <div align="center">
 
-**GestureShare** — Throw files with a wave of your hand 🤚
+**DreamGesture** — Throw files with a wave of your hand 🤚
 
-[Download ZIP](../../releases) · [Report Bug](../../issues) · [Source Code](.)
+[Download](https://github.com/dreamerdkuroshin/DreamGesture/releases) · [Report Bug](https://github.com/dreamerdkuroshin/DreamGesture/issues) · [Source Code](.)
 
 </div>
